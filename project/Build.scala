@@ -14,7 +14,7 @@ object ApplicationBuild extends Build {
   )
   lazy val bindings = (project in file("bindings")).settings(
     name := "play-iso",
-    version := "1.0",
+    version := "1.1",
     crossScalaVersions := scalaVersions,
     scalaVersion in ThisBuild := scalaVersions.head,
     scalacOptions ++= scalaOptionsVersion(
