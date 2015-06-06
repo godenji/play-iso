@@ -5,16 +5,19 @@ object ApplicationBuild extends Build {
   val scalaVersions = Seq("2.10.5", "2.11.6")
   
   lazy val root = (project in file(".")).settings(
-    name := "play-iso-build",
+    name := "play-iso-build-slick",
     scalacOptions ++= scalaOptionsVersion(
       scalaVersion.value, flags210 = Seq("-Yfundep-materialization"), Nil
     ),
-    libraryDependencies +=
+    libraryDependencies ++= Seq(
+      "com.typesafe.slick" %% "slick" % "3.0.0",
+      "org.slf4j" % "slf4j-nop" % "1.6.4",
       "org.scala-lang" % "scala-reflect" % scalaVersion.value
+    )
   )
   lazy val bindings = (project in file("bindings")).settings(
-    name := "play-iso",
-    version := "1.0",
+    name := "play-iso-slick",
+    version := "1.1",
     crossScalaVersions := scalaVersions,
     scalaVersion in ThisBuild := scalaVersions.head,
     scalacOptions ++= scalaOptionsVersion(
