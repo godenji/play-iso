@@ -2,7 +2,8 @@
  * this is a modified version of Slick's macro implementation:
  * @see https://github.com/slick/slick/blob/648184c7cb710563d07b859891ed7fe46d06849d/slick/src/main/scala/slick/lifted/MappedTo.scala 
  */
-package playiso.macros
+package playiso
+package macros
 
 import scala.language.experimental.macros
 import scala.reflect.macros.Context
@@ -13,16 +14,8 @@ import scala.util.control.NonFatal
  * primitive type
  */
 class Isomorphism[T <: MappedToBase](
-  val map: T => T#Type, val comap: T#Type => T
+  val map: T => T#Underlying, val comap: T#Underlying => T
 )
-
-/**
- * base type used to materialize value class isomorphism
- */
-trait MappedToBase extends Any {
-  type Type
-  def value: Type
-}
 
 /**
  * macro that materializes the isomorphism
@@ -39,10 +32,10 @@ object MappedToBase {
       c.enclosingPosition, 
       "Work-around for illegal macro-invocation; see SI-8351"
     )
-    implicit val eutag = c.TypeTag[T#Type](
-      e.tpe.member( newTypeName("Type") ).typeSignatureIn(e.tpe)
+    implicit val eutag = c.TypeTag[T#Underlying](
+      e.tpe.member( newTypeName("Underlying") ).typeSignatureIn(e.tpe)
     )
-    val cons = c.Expr[T#Type => T](Function(
+    val cons = c.Expr[T#Underlying => T](Function(
       List(ValDef(
         Modifiers(Flag.PARAM), newTermName("v"), TypeTree(), EmptyTree)
       ),

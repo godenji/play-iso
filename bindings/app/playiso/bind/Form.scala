@@ -1,16 +1,17 @@
 package playiso
+package bind
 
 import play.api.data.format.{Formatter, Formats}, Formats._
 import play.api.data.FormError
 
-object FormBindable {
+object Form {
   import macros._
   /**
    * materialize a value class form bindable
    */
   implicit final 
     def formBindValueClass[T <: MappedToBase]
-    (implicit formBind: Formatter[T#Type], iso: Isomorphism[T]):
+    (implicit formBind: Formatter[T#Underlying], iso: Isomorphism[T]):
     
   Formatter[T] = new Formatter[T]{
     override def bind(key: String, data: Map[String,String]): 

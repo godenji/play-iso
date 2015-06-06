@@ -1,14 +1,15 @@
 package playiso
+package bind
 
 import play.api.mvc.{PathBindable, QueryStringBindable}
 
-object RouteBindable {
+object Route {
   import macros._
   /**
    * materialize a value class path bindable
    */
   implicit final def pathBindValueClass[T <: MappedToBase]
-    (implicit pathBind: PathBindable[T#Type], iso: Isomorphism[T]): 
+    (implicit pathBind: PathBindable[T#Underlying], iso: Isomorphism[T]): 
     PathBindable[T] = new PathBindable[T]{
       override def bind(key: String, value: String): 
         String Either T = 
@@ -25,7 +26,7 @@ object RouteBindable {
    * materialize a value class querystring bindable
    */
   implicit final def qsBindValueClass[T <: MappedToBase]
-    (implicit qsBind: QueryStringBindable[T#Type], iso: Isomorphism[T]): 
+    (implicit qsBind: QueryStringBindable[T#Underlying], iso: Isomorphism[T]): 
     QueryStringBindable[T] = new QueryStringBindable[T]{
       override def bind(key: String, params: Map[String, Seq[String]]): 
         Option[String Either T] = 
