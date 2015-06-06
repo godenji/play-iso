@@ -1,4 +1,4 @@
-play-iso
+play-iso-slick
 ===================
 
 Description
