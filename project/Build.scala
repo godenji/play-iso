@@ -6,6 +6,7 @@ object ApplicationBuild extends Build {
   
   lazy val root = (project in file(".")).settings(
     name := "play-iso-build-slick",
+    version := "1.1",
     scalacOptions ++= scalaOptionsVersion(
       scalaVersion.value, flags210 = Seq("-Yfundep-materialization"), Nil
     ),

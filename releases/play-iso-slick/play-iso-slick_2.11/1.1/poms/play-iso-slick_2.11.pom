@@ -19,7 +19,7 @@
         <dependency>
             <groupId>play-iso-build-slick</groupId>
             <artifactId>play-iso-build-slick_2.11</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>1.1</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.play</groupId>
