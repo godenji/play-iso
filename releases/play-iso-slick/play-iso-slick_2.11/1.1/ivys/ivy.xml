@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-	<info organisation="play-iso-slick" module="play-iso-slick_2.11" revision="1.1" status="release" publication="20150608104646">
+	<info organisation="play-iso-slick" module="play-iso-slick_2.11" revision="1.1" status="release" publication="20150612101759">
 		<description>
 		play-iso-slick
 		</description>
