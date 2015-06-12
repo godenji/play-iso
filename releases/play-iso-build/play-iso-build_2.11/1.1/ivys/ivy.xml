@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-	<info organisation="play-iso-build" module="play-iso-build_2.11" revision="1.1" status="release" publication="20150608103607">
+	<info organisation="play-iso-build" module="play-iso-build_2.11" revision="1.1" status="release" publication="20150612100250">
 		<description>
 		play-iso-build
 		</description>

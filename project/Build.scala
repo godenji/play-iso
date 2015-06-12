@@ -20,7 +20,9 @@ object ApplicationBuild extends Build {
     scalaVersion in ThisBuild := scalaVersions.head,
     scalacOptions ++= scalaOptionsVersion(
       scalaVersion.value, flags210 = Seq("-Xdivergence211"), Nil
-    )
+    ),
+    mappings in (Compile, packageBin) ++= mappings.in(root, Compile, packageBin).value,
+    mappings in (Compile, packageSrc) ++= mappings.in(root, Compile, packageSrc).value
   ).enablePlugins(play.sbt.PlayScala).dependsOn(root).aggregate(root)
   
   // provide scalac flag(s) based on Scala version

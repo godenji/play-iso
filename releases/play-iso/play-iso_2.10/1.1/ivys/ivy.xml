@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-	<info organisation="play-iso" module="play-iso_2.10" revision="1.1" status="release" publication="20150606180002">
+	<info organisation="play-iso" module="play-iso_2.10" revision="1.1" status="release" publication="20150612100249">
 		<description>
 		play-iso
 		</description>
@@ -29,7 +29,7 @@
 	<dependencies>
 		
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.5" conf="compile->default(compile)"/>
-		<dependency org="play-iso-build" name="play-iso-build_2.10" rev="0.1-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="play-iso-build" name="play-iso-build_2.10" rev="1.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="twirl-api_2.10" rev="1.1.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-server_2.10" rev="2.4.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.4.0" conf="test->default(compile)"/>
