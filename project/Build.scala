@@ -12,7 +12,7 @@ object ApplicationBuild extends Build {
     ),
     libraryDependencies ++= Seq(
       "com.typesafe.slick" %% "slick" % "3.0.0",
-      "org.slf4j" % "slf4j-nop" % "1.6.4",
+      "org.slf4j" % "slf4j-nop" % "1.7.18" % "provided",
       "org.scala-lang" % "scala-reflect" % scalaVersion.value
     )
   )
