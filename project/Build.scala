@@ -2,8 +2,8 @@ import sbt._
 import Keys._
 
 object ApplicationBuild extends Build {
-  val scalaVersions = Seq("2.10.5", "2.11.6")
-  
+  val scalaVersions = Seq("2.10.6", "2.11.7")
+
   lazy val root = (project in file(".")).settings(
     name := "play-iso-build-slick",
     version := "1.1",
