@@ -11,11 +11,12 @@ object ApplicationBuild extends Build {
       scalaVersion.value, flags210 = Seq("-Yfundep-materialization"), Nil
     ),
     libraryDependencies ++= Seq(
-      "com.typesafe.slick" %% "slick" % "3.0.0",
+      "com.typesafe.slick" %% "slick" % "3.1.1",
       "org.slf4j" % "slf4j-nop" % "1.7.18" % "provided",
       "org.scala-lang" % "scala-reflect" % scalaVersion.value
     )
   )
+
   lazy val bindings = (project in file("bindings")).settings(
     name := "play-iso-slick",
     version := "1.1",
