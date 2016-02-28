@@ -1,10 +1,10 @@
 import sbt._
 import Keys._
+import bintray.BintrayKeys._
 
 object ApplicationBuild extends Build {
 
   object Version {
-    val playiso = "1.2"
     val scala = "2.11.7"
 
     object Dependencies {
@@ -16,7 +16,6 @@ object ApplicationBuild extends Build {
 
   lazy val buildSettings = Seq(
     organization := "io.tabmo",
-    version := Version.playiso,
     scalaVersion := Version.scala
   )
 
@@ -48,7 +47,12 @@ object ApplicationBuild extends Build {
     )
   )
 
-  lazy val allSettings = buildSettings ++ baseSettings
+  lazy val publishSettings = Seq(
+    licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0")),
+    bintrayOrganization := Some("tabmo")
+  )
+
+  lazy val allSettings = buildSettings ++ baseSettings ++ publishSettings
 
   lazy val isoMacro = (project in file("macro")).settings(
     name := "play-iso-macro-slick",
@@ -57,8 +61,6 @@ object ApplicationBuild extends Build {
     )
   ) .settings(allSettings: _*)
     .settings(macroProjectSettings: _*)
-
-
 
   lazy val root = (project in file(".")).settings(
     name := "play-iso-slick",
