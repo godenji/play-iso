@@ -3,7 +3,7 @@ package bind
 
 import play.api.mvc.{PathBindable, QueryStringBindable}
 
-object Route {
+trait Route {
   import macros._
 
   implicit final def pathBindValueClass[T <: MappedToBase]
@@ -29,3 +29,5 @@ object Route {
     }
   }
 }
+
+object Route extends Route

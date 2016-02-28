@@ -3,7 +3,7 @@ package bind
 
 import play.api.libs.json._
 
-object Json {
+trait Json {
   import macros._
 
   implicit final def readsValueClass[T <: MappedToBase]
@@ -16,3 +16,5 @@ object Json {
     writesBind.writes(iso.map(valueClass))
   }
 }
+
+object Json extends Json

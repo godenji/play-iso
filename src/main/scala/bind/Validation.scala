@@ -4,7 +4,7 @@ package bind
 import play.api.data.mapping._
 import play.api.libs.json.JsValue
 
-object Validation {
+trait Validation {
   import macros._
 
   implicit final def rulesValueClass[T <: MappedToBase]
@@ -17,3 +17,5 @@ object Validation {
     writesBind.contramap(iso.map)
   }
 }
+
+object Validation extends Validation

@@ -4,7 +4,7 @@ package bind
 import play.api.data.format.Formatter
 import play.api.data.FormError
 
-object Form {
+trait Form {
   import macros._
 
   implicit final def formBindValueClass[T <: MappedToBase]
@@ -20,3 +20,5 @@ object Form {
   }
 
 }
+
+object Form extends Form
