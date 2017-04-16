@@ -5,11 +5,10 @@ import bintray.BintrayKeys._
 object ApplicationBuild extends Build {
 
   object Version {
-    val scala = "2.11.7"
+    val scala = "2.11.8"
 
     object Dependencies {
-      val play = "2.4.6"
-      val validation = "1.1"
+      val play = "2.5.14"
       val slick = "3.1.1"
     }
   }
@@ -68,9 +67,6 @@ object ApplicationBuild extends Build {
     mappings in (Compile, packageSrc) ++= mappings.in(isoMacro, Compile, packageSrc).value,
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play" % Version.Dependencies.play,
-      "com.typesafe.play" %% "play-json" % Version.Dependencies.play,
-      "io.github.jto" %% "validation-core" % Version.Dependencies.validation,
-      "io.github.jto" %% "validation-json" % Version.Dependencies.validation,
       "org.slf4j" % "slf4j-nop" % "1.7.18" % "provided"
     )
   ) .settings(allSettings: _*)
