@@ -9,7 +9,7 @@ object ApplicationBuild extends Build {
 
     object Dependencies {
       val play = "2.5.14"
-      val slick = "3.1.1"
+      val slick = "3.2.0"
     }
   }
 

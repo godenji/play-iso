@@ -6,6 +6,10 @@ See [play-iso readme](https://github.com/godenji/play-iso/blob/master/README.md)
 
 ## Release note
 
+###v2.0.0 (require: slick 3.2.x) ###
+
+* Major slick upgrade to 3.2.x
+
 ###v1.2.0 (require: slick 3.1.x) ###
 
 * Remove (non working) support of jto-validation
