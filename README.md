@@ -6,6 +6,11 @@ See [play-iso readme](https://github.com/godenji/play-iso/blob/master/README.md)
 
 ## Release note
 
+### v3.0.2  (require: slick 3.2.1)
+
+* Update scala to 2.12.2
+* Update play to 2.6.2
+
 ### v3.0.1  (require: slick 3.2.1)
 
 * Update slick to 3.2.1
