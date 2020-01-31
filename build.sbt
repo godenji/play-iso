@@ -47,13 +47,13 @@ lazy val baseSettings = Seq(
   scalacOptions in (Compile, console) := compilerOptions,
   scalacOptions in (Compile, test) := compilerOptions,
   resolvers ++= Seq(
-    "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/",
+    "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/",
     Resolver.sonatypeRepo("releases")
   )
 )
 
 lazy val publishSettings = Seq(
-  licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0")),
+  licenses += ("Apache-2.0", url("https://opensource.org/licenses/Apache-2.0")),
   bintrayOrganization := Some("tabmo")
 )
 
@@ -73,7 +73,7 @@ lazy val root = (project in file(".")).settings(
   mappings in (Compile, packageSrc) ++= mappings.in(isoMacro, Compile, packageSrc).value,
   libraryDependencies ++= Seq(
     "com.typesafe.play" %% "play" % Version.Dependencies.play,
-    "org.slf4j" % "slf4j-nop" % "1.7.18" % "provided"
+    "org.slf4j" % "slf4j-nop" % "1.7.30" % "provided"
   )
 ) .settings(allSettings: _*)
   .dependsOn(isoMacro).aggregate(isoMacro)
